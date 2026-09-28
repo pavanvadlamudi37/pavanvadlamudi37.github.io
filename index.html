@@ -2,65 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="google-site-verification" content="oS981RvR2CggVJeQ1h2UYFxzCjQD_hlA2PtyUbsuT7o" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="One Bullet One Room — a neon arcade survival game by Twisted Game.">
-  <meta name="theme-color" content="#050815">
-  <title>One Bullet One Room | Twisted Game</title>
-  <style>
-    :root { --bg:#050815; --panel:#0d1530; --line:rgba(103,232,249,.24); --cyan:#67e8f9; --violet:#a78bfa; --ink:#eff6ff; --muted:#aab7d2; --gold:#fbbf24; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--ink); background:var(--bg); font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; overflow-x:hidden; }
-    body::before { content:""; position:fixed; z-index:-2; inset:0; background:radial-gradient(circle at 18% 4%,rgba(14,165,233,.22),transparent 27rem),radial-gradient(circle at 86% 24%,rgba(139,92,246,.18),transparent 27rem),#050815; }
-    .grid { position:fixed; z-index:-1; inset:0; opacity:.32; background-image:linear-gradient(rgba(103,232,249,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(103,232,249,.08) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,#000,transparent 85%); }
-    a { color:inherit; }
-    .wrap { width:min(1120px,calc(100% - 40px)); margin:auto; }
-    header { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid rgba(148,163,184,.15); }
-    .brand { text-decoration:none; display:flex; align-items:center; gap:12px; font-weight:850; letter-spacing:.04em; }
-    .brand-mark { display:grid; place-items:center; width:38px; height:38px; border:1px solid var(--cyan); border-radius:12px; color:var(--cyan); box-shadow:0 0 25px rgba(103,232,249,.35); font-size:1.25rem; }
-    nav { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:20px; }
-    nav a { color:var(--muted); text-decoration:none; font-size:.9rem; font-weight:700; }
-    nav a:hover { color:var(--cyan); }
-    .hero { min-height:650px; display:grid; grid-template-columns:1.16fr .84fr; align-items:center; gap:45px; padding:96px 0 80px; }
-    .eyebrow { color:var(--cyan); font-size:.76rem; font-weight:850; letter-spacing:.18em; text-transform:uppercase; }
-    h1,h2,h3,p { margin-top:0; } h1 { max-width:760px; margin:.3rem 0 1.2rem; font-size:clamp(3.2rem,8vw,6.5rem); line-height:.91; letter-spacing:-.07em; }
-    h1 span { color:var(--cyan); text-shadow:0 0 32px rgba(103,232,249,.44); }
-    .lead { max-width:590px; font-size:1.14rem; color:var(--muted); }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
-    .button { display:inline-block; border-radius:12px; padding:13px 19px; border:1px solid var(--cyan); color:#031019; background:var(--cyan); text-decoration:none; font-weight:850; box-shadow:0 0 28px rgba(103,232,249,.25); }
-    .button.alt { background:transparent; color:var(--ink); border-color:rgba(167,139,250,.7); box-shadow:none; }
-    .arena { aspect-ratio:1; position:relative; border:1px solid var(--line); border-radius:28px; overflow:hidden; background:linear-gradient(135deg,rgba(8,47,73,.82),rgba(30,27,75,.75)); box-shadow:inset 0 0 90px rgba(6,182,212,.1),0 28px 70px rgba(0,0,0,.3); }
-    .arena::before,.arena::after { content:""; position:absolute; inset:9%; border:1px solid rgba(103,232,249,.22); transform:rotate(45deg); } .arena::after { inset:27%; border-color:rgba(251,191,36,.8); box-shadow:0 0 34px rgba(251,191,36,.32); }
-    .orb { position:absolute; width:25px; aspect-ratio:1; border-radius:50%; background:var(--gold); top:31%; left:28%; box-shadow:0 0 0 12px rgba(251,191,36,.08),0 0 35px var(--gold); animation:float 4.5s ease-in-out infinite; }
-    .ship { position:absolute; right:20%; bottom:24%; width:0; height:0; border-left:23px solid transparent; border-right:23px solid transparent; border-bottom:60px solid var(--cyan); filter:drop-shadow(0 0 16px var(--cyan)); transform:rotate(38deg); }
-    .ship::after { content:""; position:absolute; left:-10px; top:39px; border-left:10px solid transparent; border-right:10px solid transparent; border-bottom:25px solid var(--violet); }
-    @keyframes float { 50% { transform:translate(34px,-23px); } }
-    section { padding:88px 0; border-top:1px solid rgba(148,163,184,.14); } h2 { font-size:clamp(2rem,4vw,3.4rem); letter-spacing:-.05em; line-height:1.05; } .section-intro { max-width:600px; color:var(--muted); }
-    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; margin-top:35px; } .card { min-height:210px; padding:25px; border:1px solid rgba(148,163,184,.16); border-radius:18px; background:linear-gradient(145deg,rgba(15,23,51,.92),rgba(8,14,34,.82)); }
-    .num { display:block; margin-bottom:28px; color:var(--cyan); font-weight:900; } .card h3 { margin-bottom:8px; font-size:1.15rem; } .card p { color:var(--muted); font-size:.95rem; }
-    .play { display:grid; grid-template-columns:.85fr 1.15fr; gap:46px; align-items:start; } .steps { list-style:none; margin:0; padding:0; } .steps li { display:grid; grid-template-columns:40px 1fr; gap:15px; padding:18px 0; border-bottom:1px solid rgba(148,163,184,.16); } .steps b { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:rgba(103,232,249,.13); color:var(--cyan); } .steps p { color:var(--muted); margin:3px 0 0; }
-    .status { padding:26px; border:1px solid rgba(251,191,36,.38); border-radius:18px; background:rgba(251,191,36,.06); } .status strong { color:var(--gold); } .status p { color:var(--muted); margin:8px 0 0; }
-    footer { padding:36px 0 48px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; color:var(--muted); font-size:.9rem; } footer a { color:var(--cyan); }
-    @media (max-width:760px) { .wrap { width:min(100% - 28px,1120px); } header { padding:14px 0; align-items:flex-start; } nav { gap:12px; font-size:.84rem; } .hero,.play { grid-template-columns:1fr; } .hero { padding:68px 0 62px; min-height:auto; } .arena { max-width:410px; width:100%; margin:auto; } .cards { grid-template-columns:1fr; } section { padding:64px 0; } }
-  </style>
+  <meta name="description" content="One Bullet One Room — a precision neon survival game by Twisted Game. One room. One shot. No wasted moves.">
+  <meta name="theme-color" content="#03050b">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>One Bullet One Room — Official Game Site</title>
+  <meta name="google-site-verification" content="oS981RvR2CggVJeQ1h2UYFxzCjQD_hlA2PtyUbsuT7o" />
 </head>
 <body>
-  <div class="grid" aria-hidden="true"></div>
-  <div class="wrap">
-    <header>
-      <a class="brand" href="#top"><span class="brand-mark">↗</span><span>TWISTED GAME</span></a>
-      <nav aria-label="Primary navigation"><a href="#game">The Game</a><a href="#play">How to Play</a><a href="privacy.html">Privacy</a></nav>
-    </header>
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div><div class="eyebrow">Neon arcade survival</div><h1 id="hero-title">ONE BULLET.<br><span>ONE ROOM.</span></h1><p class="lead">A fast, focused survival game where every bounce matters. Outmaneuver the swarm, guide your only shot, and take back the room.</p><div class="actions"><a class="button" href="#game">Enter the arena</a><a class="button alt" href="#play">Learn the controls</a></div></div>
-        <div class="arena" role="img" aria-label="Abstract neon game arena with a ship and one glowing bullet"><span class="orb"></span><span class="ship"></span></div>
-      </section>
-      <section id="game"><div class="eyebrow">Built for one more run</div><h2>Precision over panic.</h2><p class="section-intro">One Bullet One Room turns a simple rule into a survival challenge. Your shot ricochets around the arena while enemies close in from every direction.</p><div class="cards"><article class="card"><span class="num">01 / BOUNCE</span><h3>One-bullet combat</h3><p>Fire, bank your shot off the walls, and recall it before the room overwhelms you.</p></article><article class="card"><span class="num">02 / SURVIVE</span><h3>Escalating stages</h3><p>Clear score targets, unlock new stages, and adapt as each arena gets more intense.</p></article><article class="card"><span class="num">03 / MASTER</span><h3>Daily challenges</h3><p>Return for a fresh modifier, sharpen your route, and chase your best score.</p></article></div></section>
-      <section id="play"><div class="play"><div><div class="eyebrow">How it works</div><h2>Simple controls. Hard choices.</h2><p class="section-intro">The room gives you just enough space—until it does not.</p></div><ol class="steps"><li><b>1</b><div><strong>Move with the joystick</strong><p>Stay clear of incoming enemies and set up clean angles.</p></div></li><li><b>2</b><div><strong>Fire or recall</strong><p>Launch your ball, use the walls, then pull it back when timing matters.</p></div></li><li><b>3</b><div><strong>Build your run</strong><p>Unlock themes, progress through stages, and keep pushing your high score.</p></div></li></ol></div></section>
-      <section><div class="status"><strong>Currently in development</strong><p>One Bullet One Room is being refined for Android. Follow Twisted Game for release updates and future arcade projects.</p></div></section>
-    </main>
-    <footer><span>© 2026 Twisted Game. All rights reserved.</span><span><a href="privacy.html">Privacy Policy</a> · <a href="https://github.com/pavanvadlamudi37" rel="noopener">Developer</a></span></footer>
-  </div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="One Bullet One Room home"><img src="assets/logo.svg" alt="" width="46" height="46"><span class="brand-copy"><strong>ONE BULLET</strong><small>ONE ROOM</small></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Open menu</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="#game">Game</a><a href="#arsenal">Arsenal</a><a href="#how-to-play">How to play</a><a href="privacy.html">Privacy</a><a class="nav-cta" href="#release">Release status <i></i></a></nav>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-space" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <div class="kicker"><span></span> Neon arcade survival</div>
+        <h1 id="hero-title"><span>ONE BULLET.</span><br>ONE ROOM.</h1>
+        <p class="hero-copy">The room is closing in. Guide your only shot through impossible angles, recall it at the perfect moment, and survive the swarm.</p>
+        <div class="hero-actions"><a class="button button-primary magnetic" href="#game"><span>Enter the arena</span><b aria-hidden="true">↗</b></a><a class="button button-ghost" href="#how-to-play"><span class="play-icon" aria-hidden="true">▶</span> Learn the rules</a></div>
+        <div class="hero-meta" aria-label="Game features"><span><b>01</b> Precision combat</span><span><b>∞</b> Replayable runs</span><span><b>24H</b> Daily challenge</span></div>
+      </div>
+      <div class="hero-visual reveal" data-tilt aria-label="A spacecraft inside a neon containment room">
+        <div class="visual-hud hud-top"><span>CHAMBER // 07</span><span class="live"><i></i> LIVE</span></div>
+        <div class="arena-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div><div class="bullet" aria-hidden="true"><i></i></div>
+        <img class="hero-ship" src="assets/ship.png" alt="The player's spacecraft"><div class="enemy enemy-one" aria-hidden="true"></div><div class="enemy enemy-two" aria-hidden="true"></div>
+        <div class="visual-hud hud-bottom"><span>THREAT LEVEL <b>HIGH</b></span><span>01 / SHOT</span></div>
+      </div>
+      <a class="scroll-cue" href="#game"><span>Scroll to breach</span><i></i></a>
+    </section>
+    <section class="marquee" aria-label="Game promise"><div class="marquee-track"><span>ONE SHOT</span><i></i><span>ZERO WASTE</span><i></i><span>PURE INSTINCT</span><i></i><span>ONE SHOT</span><i></i><span>ZERO WASTE</span><i></i><span>PURE INSTINCT</span></div></section>
+    <section class="section game-section" id="game">
+      <div class="section-heading reveal"><div><div class="kicker"><span></span> The core loop</div><h2>Precision<br><em>over panic.</em></h2></div><p>One simple rule becomes a ruthless survival test. Your bullet never disappears—it ricochets, hunts, and returns. The rest is timing.</p></div>
+      <div class="feature-stage reveal" data-tilt>
+        <div class="stage-copy"><span class="chapter">01 / FIRE</span><h3>Every angle<br>is a weapon.</h3><p>Launch your shot into the chamber. Bank it off the walls, thread the swarm, and turn the arena itself into your advantage.</p><div class="stat-line"><span>Wall ricochet</span><b>ACTIVE</b></div><div class="stat-line"><span>Ammo count</span><b>01</b></div></div>
+        <div class="stage-visual ricochet" aria-hidden="true"><div class="shot-path"></div><div class="shot-dot"></div><div class="target t1"></div><div class="target t2"></div><div class="target t3"></div><span class="coordinate c1">X:118 Y:042</span><span class="coordinate c2">IMPACT // 87°</span></div>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal tilt-card"><span class="chapter">02 / RECALL</span><div class="card-icon recall-icon" aria-hidden="true">↙</div><h3>Own the return.</h3><p>Pull your shot home when timing matters. A perfect recall can cut through danger twice.</p><span class="card-link">Control the trajectory <b>↗</b></span></article>
+        <article class="feature-card reveal tilt-card accent-card"><span class="chapter">03 / SURVIVE</span><img src="assets/enemy.png" alt="Enemy spacecraft" loading="lazy"><div><h3>The room adapts.</h3><p>Faster waves, tighter gaps, and escalating pressure make every stage a new calculation.</p></div></article>
+      </div>
+    </section>
+    <section class="section arsenal-section" id="arsenal">
+      <div class="section-heading compact reveal"><div><div class="kicker"><span></span> Unlock the impossible</div><h2>Your run.<br><em>Your arsenal.</em></h2></div><p>Push your all-time best to unlock new tools, arena themes, and high-risk ways to survive.</p></div>
+      <div class="arsenal-grid">
+        <article class="arsenal-card reveal"><div class="arsenal-visual double-shot" aria-hidden="true"><span></span><span></span></div><small>UNLOCK 01</small><h3>Double Ball</h3><p>Two trajectories. Twice the pressure. A second shot changes every route through the room.</p></article>
+        <article class="arsenal-card reveal"><div class="arsenal-visual purge" aria-hidden="true"><span></span></div><small>UNLOCK 02</small><h3>Enemy Purge</h3><p>Save a charge for the moment the chamber turns impossible—and clear your path.</p></article>
+        <article class="arsenal-card reveal"><div class="arsenal-visual boomerang"><img src="assets/boomerang.png" alt="Boomerang weapon" loading="lazy"></div><small>UNLOCK 03</small><h3>Boomerang</h3><p>Trade the straight line for a wider arc and turn the return journey into the attack.</p></article>
+      </div>
+    </section>
+    <section class="section play-section" id="how-to-play">
+      <div class="play-layout"><div class="play-title reveal"><div class="kicker"><span></span> Learn in seconds</div><h2>Three moves.<br><em>Endless mastery.</em></h2><p>The controls stay out of your way. What you do with them is the game.</p></div><ol class="steps"><li class="reveal"><span>01</span><div><h3>Move</h3><p>Use the virtual joystick to make space, read the room, and line up the next angle.</p></div><b aria-hidden="true">↗</b></li><li class="reveal"><span>02</span><div><h3>Fire &amp; recall</h3><p>Launch your bullet, let the walls do the work, then pull it back through the swarm.</p></div><b aria-hidden="true">↗</b></li><li class="reveal"><span>03</span><div><h3>Build the run</h3><p>Clear score targets, unlock new stages, and keep pushing your all-time best.</p></div><b aria-hidden="true">↗</b></li></ol></div>
+    </section>
+    <section class="challenge-section"><div class="challenge-inner reveal"><div class="challenge-orb" aria-hidden="true"><span></span><i></i></div><div><div class="kicker"><span></span> A new threat every day</div><h2>Daily challenge.</h2><p>A fresh modifier resets every 24 hours. Learn the pattern, sharpen your route, and climb the leaderboard.</p></div><div class="countdown" aria-label="Daily challenge reset"><small>NEXT RESET</small><strong data-countdown>08:42:17</strong><span>UTC cycle</span></div></div></section>
+    <section class="section release-section" id="release"><div class="release-card reveal"><div class="release-bg" aria-hidden="true"></div><div class="release-copy"><div class="kicker"><span></span> Transmission incoming</div><h2>The chamber<br>opens soon.</h2><p>One Bullet One Room is being refined for Android. Follow Twisted Game for release updates and future arcade projects.</p><a class="button button-primary magnetic" href="https://github.com/pavanvadlamudi37" rel="noopener"><span>Follow development</span><b aria-hidden="true">↗</b></a></div><div class="release-object" aria-hidden="true"><img src="assets/ship.png" alt=""><div class="ship-ring"></div></div></div></section>
+  </main>
+  <footer><div class="footer-brand"><img src="assets/logo.svg" alt="" width="54" height="54"><div><strong>ONE BULLET ONE ROOM</strong><span>A TWISTED GAME PRODUCTION</span></div></div><div class="footer-links"><a href="#game">Game</a><a href="#arsenal">Arsenal</a><a href="#how-to-play">How to play</a><a href="privacy.html">Privacy</a></div><div class="footer-bottom"><span>© 2026 Twisted Game. All rights reserved.</span><span>One room. One bullet. Survive.</span></div></footer>
+  <script src="script.js"></script>
 </body>
 </html>
